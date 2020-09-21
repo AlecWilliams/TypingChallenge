@@ -1,20 +1,39 @@
 .container
 {
-    padding-top: 50px;
+    padding-top: 7em;
     background-color: #2d98da;
+    width: 5000px;
 }
 
 .pending
 {
     color: gray;
+    font-size: 24px;
 }
 
 .correct
 {
     color: lightgreen;
+    font-size: 24px;
 }
 
 .incorrect
 {
     color: red;
+    font-size: 24px;
+
+}
+
+.field {
+    padding-bottom: 2em;
+    padding-right: 2em;
+    padding-left: 2em;
+
+}
+
+.spaced {
+    padding-bottom: 1em;
+}
+.title {
+    padding-top: 0.5em;
 }

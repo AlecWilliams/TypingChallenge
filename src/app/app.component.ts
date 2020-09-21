@@ -11,24 +11,51 @@ export class AppComponent {
   enteredText = '';
   @ViewChild("inputBox") inputBox;
 
-  onChangeInput(value: string)
-  {
-    console.log(value);
-    this.enteredText = value;
-  }
+  time: number = 0;
+  interval;
+
+
+  
+
+
 
   generateNewText()
   {
     this.randomText = lorem.sentence();
     this.enteredText = '';
-    console.log(this.inputBox);
+    //console.log(this.inputBox);
     this.inputBox.nativeElement.focus();
+  }
+
+  inputChange(){
+    if(this.enteredText.length == 1)
+    {
+      this.startTimer();
+    }
+   else if(this.enteredText == this.randomText)
+   {
+     this.pauseTimer()
+     console.log(this.time / 100.00, 'Timer')
+   }
+
   }
   compText(generatedLetter: string, enteredLetter: string)
   {
     if(!enteredLetter)
       return 'pending';
+  
     return generatedLetter == enteredLetter ? 'correct' : 'incorrect';
   }
 
+  startTimer() {
+    
+    this.interval = setInterval(() => {
+      this.time++;
+    },10)
+  }
+
+  pauseTimer() {
+   
+    clearInterval(this.interval);
+  }
 }
