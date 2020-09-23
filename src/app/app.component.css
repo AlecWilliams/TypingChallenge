@@ -3,7 +3,7 @@
 .container
 {
     padding-top: 7em;
-    background-color: #2d98da;
+   
     width: 5000px;
 }
 
@@ -37,10 +37,18 @@
     padding-bottom: 1em;
     
 }
-.title {
-    padding-top: 0.5em;
+.landing {
+    padding-top: 1em;
+    font-weight: bold;
+    font-size: 52px;
 }
 .eqWidth {
     width: 150px;
+}
+
+
+.hero.is-info {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://unsplash.it/1200/900?random) no-repeat center center fixed;
+    background-size: cover;
 }
 

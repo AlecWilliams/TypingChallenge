@@ -11,6 +11,7 @@ export class AppComponent {
   randomText= lorem.sentence(this.difficulty);
   enteredText = '';
   @ViewChild("inputBox") inputBox;
+  @ViewChild('b1') firstButton; 
 
   time: number = 0;
   interval;
@@ -18,7 +19,9 @@ export class AppComponent {
  status;
   selected;
 
-
+  ngAfterViewInit(){
+    this.selected = this.firstButton.nativeElement;
+  }
 
   generateNewText()
   {
@@ -27,7 +30,7 @@ export class AppComponent {
     this.enteredText = '';
     this.done = false;
     this.time = 0;
-    //console.log(this.inputBox);
+    //console.log(this.selected);
     this.inputBox.nativeElement.focus();
   }
 
