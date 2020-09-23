@@ -7,22 +7,26 @@ import { lorem } from 'faker';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  randomText= lorem.sentence();
+  difficulty = 5;
+  randomText= lorem.sentence(this.difficulty);
   enteredText = '';
   @ViewChild("inputBox") inputBox;
 
   time: number = 0;
   interval;
-
-
-  
+  done = false;
+ status;
+  selected;
 
 
 
   generateNewText()
   {
-    this.randomText = lorem.sentence();
+    this.randomText = lorem.sentence(this.difficulty);
+    
     this.enteredText = '';
+    this.done = false;
+    this.time = 0;
     //console.log(this.inputBox);
     this.inputBox.nativeElement.focus();
   }
@@ -34,8 +38,9 @@ export class AppComponent {
     }
    else if(this.enteredText == this.randomText)
    {
+     this.done = true;
      this.pauseTimer()
-     console.log(this.time / 100.00, 'Timer')
+    // console.log(this.time / 100.00, 'Timer')
    }
 
   }
@@ -50,7 +55,10 @@ export class AppComponent {
   startTimer() {
     
     this.interval = setInterval(() => {
-      this.time++;
+      if(!this.done)
+      {
+        this.time++;
+      }
     },10)
   }
 

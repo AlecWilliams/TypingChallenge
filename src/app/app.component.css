@@ -1,3 +1,5 @@
+
+
 .container
 {
     padding-top: 7em;
@@ -25,7 +27,7 @@
 }
 
 .field {
-    padding-bottom: 2em;
+    padding-bottom: 1em;
     padding-right: 2em;
     padding-left: 2em;
 
@@ -33,7 +35,12 @@
 
 .spaced {
     padding-bottom: 1em;
+    
 }
 .title {
     padding-top: 0.5em;
 }
+.eqWidth {
+    width: 150px;
+}
+
